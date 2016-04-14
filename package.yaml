@@ -1,0 +1,27 @@
+name: symbolic
+version: 0.1.0.0
+synopsis: Symbolic differention
+description: Symbolic differentiation
+author: Oleg Grenrus <oleg.grenrus@iki.fi>
+maintainer: Oleg Grenrus <oleg.grenrus@iki.fi>
+license: BSD3
+github: phadej/sd
+category: Math
+tested-with: GHC==7.8.4, GHC==7.10.3, GHC==8.0.1
+extra-source-files:
+- README.md
+
+ghc-options: -Wall
+
+dependencies:
+  - base            >= 4.7      && <4.9
+  - base-compat     >= 0.6.0    && <0.10
+  - generics-sop    >= 0.2.1.0  && <0.3
+
+when:
+  - condition: "!impl(ghc >= 8.0.1)"
+    dependencies:
+      - semigroups   >= 0.18.1 && <0.19
+
+library:
+  source-dirs: src
